@@ -30,8 +30,8 @@ export const ContactFormSchema = z.object({
   companyName: z
     .string()
     .max(100, "Company name must be less than 100 characters")
-    .optional()
-    .transform((name) => name?.trim()),
+    .transform((name) => name?.trim())
+    .optional(),
 
   monthlyRevenue: z
     .enum(["under-5k", "5k-15k", "15k-30k", "30k-50k", "50k-plus"])
@@ -60,8 +60,8 @@ export const ContactFormSchema = z.object({
   phoneNumber: z
     .string()
     .regex(/^[\+]?[\d\s\-\(\)]{10,20}$/, "Please enter a valid phone number")
-    .optional()
-    .transform((phone) => phone?.trim()),
+    .transform((phone) => phone?.trim())
+    .optional(),
 });
 
 // Type inference from schema
