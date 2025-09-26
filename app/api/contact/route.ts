@@ -3,6 +3,7 @@ import { ContactFormSchema, formatZodError } from "@/lib/schemas/contact";
 import { ensureEnvironment, enforceRateLimit } from "@/lib/middleware/security";
 import { sendWebhook, WebhookError } from "@/lib/services/webhook";
 import {
+  ContactFormData,
   ContactFormSuccessResponse,
   ContactFormErrorResponse,
   WebhookPayload,
@@ -59,7 +60,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         {
           success: false,
           error: message,
-          field: field as "name" | "email" | "message" | undefined,
+          field: field as keyof ContactFormData | undefined,
           timestamp,
         },
         { status: 400 }
@@ -78,9 +79,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const webhookPayload: WebhookPayload = {
       type: "contact_form_submission",
       data: {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+        ...formData, // This includes all the form fields
         timestamp,
         source: "landing-page",
         metadata: {

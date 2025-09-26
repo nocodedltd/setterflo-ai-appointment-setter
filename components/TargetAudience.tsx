@@ -84,10 +84,10 @@ const TargetAudience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary font-heading mb-6">
-            Who It's For
+            Who It&apos;s For
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            If you're tired of unreliable human setters and want predictable lead flow, 
+            If you&apos;re tired of unreliable human setters and want predictable lead flow, 
             SetterFlo is your solution.
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ const TargetAudience = () => {
                 Current Frustrations
               </h3>
               <p className="text-text-muted text-lg">
-                Sound familiar? You're not alone.
+                Sound familiar? You&apos;re not alone.
               </p>
             </div>
 

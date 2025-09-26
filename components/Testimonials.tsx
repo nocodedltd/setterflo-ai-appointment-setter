@@ -40,7 +40,7 @@ const Testimonials = () => {
       role: 'Executive Coach',
       revenue: '£30k/month',
       avatar: 'DC',
-      quote: "I've tried every lead generation tool out there. SetterFlo is the only one that actually works. The AI understands my coaching style and books qualified leads consistently.",
+      quote: "I&apos;ve tried every lead generation tool out there. SetterFlo is the only one that actually works. The AI understands my coaching style and books qualified leads consistently.",
       rating: 5,
       savings: '£2,500/month',
     },
@@ -49,7 +49,7 @@ const Testimonials = () => {
       role: 'Career Coach',
       revenue: '£12k/month',
       avatar: 'LP',
-      quote: "As a new coach, I couldn't afford human setters. SetterFlo gave me enterprise-level lead generation at a fraction of the cost. I'm scaling faster than I ever imagined.",
+      quote: "As a new coach, I couldn&apos;t afford human setters. SetterFlo gave me enterprise-level lead generation at a fraction of the cost. I&apos;m scaling faster than I ever imagined.",
       rating: 5,
       savings: '£1,200/month',
     },
@@ -81,18 +81,6 @@ const Testimonials = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
-
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +96,7 @@ const Testimonials = () => {
             What Coaches Are Saying
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Join hundreds of successful coaches who've automated their lead generation with SetterFlo.
+            Join hundreds of successful coaches who&apos;ve automated their lead generation with SetterFlo.
           </p>
         </motion.div>
 
@@ -138,7 +126,7 @@ const Testimonials = () => {
 
                   {/* Quote */}
                   <blockquote className="text-xl lg:text-2xl text-text-primary font-medium mb-8 leading-relaxed">
-                    "{testimonials[currentIndex].quote}"
+                    &quot;{testimonials[currentIndex].quote}&quot;
                   </blockquote>
 
                   {/* Rating */}

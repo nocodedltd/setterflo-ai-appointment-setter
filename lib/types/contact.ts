@@ -3,12 +3,8 @@
  * TypeScript interfaces for contact form data and API responses
  */
 
-// Contact form input data from user
-export interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
+// Re-export ContactFormInput from schema as ContactFormData for consistency
+export type { ContactFormInput as ContactFormData } from "@/lib/schemas/contact";
 
 // API response for successful form submission
 export interface ContactFormSuccessResponse {
@@ -21,7 +17,7 @@ export interface ContactFormSuccessResponse {
 export interface ContactFormErrorResponse {
   success: false;
   error: string;
-  field?: "name" | "email" | "message";
+  field?: keyof ContactFormData;
   timestamp: string;
 }
 

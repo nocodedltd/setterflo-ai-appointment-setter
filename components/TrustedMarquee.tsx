@@ -42,7 +42,7 @@ const TrustedMarquee = () => {
             Trusted by coaches scaling beyond £10k/month
           </h2>
           <p className="text-text-secondary text-lg">
-            Join successful coaches who've automated their lead generation
+            Join successful coaches who&apos;ve automated their lead generation
           </p>
         </motion.div>
 

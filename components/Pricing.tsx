@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Check, Star, Zap, Crown, ArrowRight, Calendar } from 'lucide-react';
 
 const Pricing = () => {
@@ -154,7 +154,7 @@ const Pricing = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {plans.map((plan, index) => {
+          {plans.map((plan) => {
             const Icon = plan.icon;
             const price = billing === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice;
             
@@ -264,7 +264,7 @@ const Pricing = () => {
               Beta Pricing Open for 5 Coaches Only
             </h3>
             <p className="text-text-secondary text-lg mb-6">
-              Once filled, pricing increases. Don't wait. Lock in these rates for life.
+              Once filled, pricing increases. Don&apos;t wait. Lock in these rates for life.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
