@@ -1,0 +1,26 @@
+{
+  "name": "SetterFlo - AI Appointment Setter for Coaches",
+  "short_name": "SetterFlo",
+  "description": "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one client sale.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1B36",
+  "theme_color": "#00B9AD",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-GB"
+}

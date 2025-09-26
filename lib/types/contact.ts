@@ -1,0 +1,59 @@
+/**
+ * Contact Form Types
+ * TypeScript interfaces for contact form data and API responses
+ */
+
+// Contact form input data from user
+export interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+// API response for successful form submission
+export interface ContactFormSuccessResponse {
+  success: true;
+  message: string;
+  timestamp: string;
+}
+
+// API response for form submission errors
+export interface ContactFormErrorResponse {
+  success: false;
+  error: string;
+  field?: "name" | "email" | "message";
+  timestamp: string;
+}
+
+// Union type for all possible API responses
+export type ContactFormResponse = ContactFormSuccessResponse | ContactFormErrorResponse;
+
+// Enhanced contact form data with metadata for webhook
+export interface ContactFormSubmission extends ContactFormData {
+  timestamp: string;
+  source: string;
+  metadata: {
+    userAgent?: string;
+    ipAddress?: string;
+  };
+}
+
+// Webhook payload structure sent to external endpoint
+export interface WebhookPayload {
+  type: "contact_form_submission";
+  data: ContactFormSubmission;
+}
+
+// Form validation state for UI components
+export interface FormFieldError {
+  field: keyof ContactFormData;
+  message: string;
+}
+
+// Form submission state for UI management
+export interface FormSubmissionState {
+  isSubmitting: boolean;
+  isSuccess: boolean;
+  error: string | null;
+  fieldErrors: FormFieldError[];
+}
