@@ -77,7 +77,7 @@ const FinalCTA = () => {
                 </h2>
                 
                 <p className="text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
-                  Join hundreds of successful coaches who've automated their lead generation. 
+                  Join hundreds of successful coaches who&apos;ve automated their lead generation. 
                   Get your AI setter running in under 10 minutes and start booking more calls today.
                 </p>
 
@@ -114,7 +114,7 @@ const FinalCTA = () => {
             className="mt-16"
           >
             <h3 className="text-2xl font-bold text-text-primary font-heading mb-8">
-              What You'll Get
+              What You&apos;ll Get
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">

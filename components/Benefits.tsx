@@ -186,7 +186,7 @@ const Benefits = () => {
                 </h3>
               </div>
               <p className="text-text-secondary text-lg mb-8">
-                Unlike spray-and-pray approaches, SetterFlo analyses each prospect's profile 
+                Unlike spray-and-pray approaches, SetterFlo analyses each prospect&apos;s profile 
                 to qualify leads before engaging. This means higher conversion rates and 
                 more qualified calls.
               </p>

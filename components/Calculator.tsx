@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { Calculator as CalculatorIcon, TrendingUp, DollarSign, Calendar, Users, ArrowRight } from 'lucide-react';
 
 const SavingsCalculator = () => {
@@ -21,11 +21,11 @@ const SavingsCalculator = () => {
     yearlySavings: 0,
   });
 
-  const plans = {
+  const plans = useMemo(() => ({
     starter: { monthly: 397, name: 'Starter' },
     pro: { monthly: 597, name: 'Pro' },
     enterprise: { monthly: 0, name: 'Enterprise' },
-  };
+  }), []);
 
   useEffect(() => {
     const calculateSavings = () => {
@@ -55,7 +55,7 @@ const SavingsCalculator = () => {
     };
 
     calculateSavings();
-  }, [inputs]);
+  }, [inputs, plans]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-GB', {
@@ -73,18 +73,6 @@ const SavingsCalculator = () => {
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -318,7 +306,7 @@ const SavingsCalculator = () => {
                   Stop Losing Money
                 </h4>
                 <p className="text-text-secondary">
-                  You're currently paying{' '}
+                  You&apos;re currently paying{' '}
                   <span className="font-bold text-error-500">
                     {formatCurrency(savings.humanCost)}
                   </span>{' '}
@@ -326,7 +314,7 @@ const SavingsCalculator = () => {
                   <span className="font-bold text-primary">
                     {formatCurrency(savings.setterFloCost)}
                   </span>
-                  . That's{' '}
+                  . That&apos;s{' '}
                   <span className="font-bold text-success-500">
                     {formatCurrency(savings.monthlySavings)} saved
                   </span>{' '}

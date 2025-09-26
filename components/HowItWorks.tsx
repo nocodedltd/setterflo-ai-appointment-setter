@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, Zap, Calendar, ArrowRight, CheckCircle, Settings, Instagram, TrendingUp } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, CheckCircle, Settings, Instagram, TrendingUp } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -255,7 +255,7 @@ const HowItWorks = () => {
               Ready to Get Started?
             </h3>
             <p className="text-text-secondary text-lg mb-6">
-              Join hundreds of coaches who've automated their lead generation. 
+              Join hundreds of coaches who&apos;ve automated their lead generation. 
               Get your AI setter running in under 10 minutes.
             </p>
             <motion.button

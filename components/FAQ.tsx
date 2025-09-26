@@ -85,7 +85,7 @@ const FAQ = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Everything you need to know about SetterFlo. 
-            Can't find your answer? Book a call and we'll help you out.
+            Can&apos;t find your answer? Book a call and we&apos;ll help you out.
           </p>
         </motion.div>
 
@@ -160,7 +160,7 @@ const FAQ = () => {
               Still Have Questions?
             </h3>
             <p className="text-text-secondary text-lg mb-6">
-              Book a 15-minute call with our team. We'll answer all your questions 
+              Book a 15-minute call with our team. We&apos;ll answer all your questions 
               and show you exactly how SetterFlo can transform your lead generation.
             </p>
             <motion.button

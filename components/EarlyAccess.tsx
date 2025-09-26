@@ -91,7 +91,7 @@ const EarlyAccess = () => {
                 </h2>
                 
                 <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-                  Once filled, pricing increases. Don't wait. Lock in these rates for life 
+                  Once filled, pricing increases. Don&apos;t wait. Lock in these rates for life 
                   and join the future of AI-powered lead generation.
                 </p>
 

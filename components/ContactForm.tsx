@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
-import { Input, Textarea, Select } from "@/components/ui/Input";
+import { Input, Select } from "@/components/ui/Input";
 import { contact } from "@/lib/content/landing-data";
 import { ContactFormSchema, type ContactFormInput } from "@/lib/schemas/contact";
 import type { ContactFormResponse } from "@/lib/types/contact";

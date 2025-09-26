@@ -13,7 +13,7 @@ const Hero = () => {
       setCurrentWord((prev) => (prev + 1) % words.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -140,7 +140,7 @@ const Hero = () => {
               className="glass hover:glass-strong text-text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 group"
             >
               <Calculator size={20} />
-              See How Much You'll Save
+              See How Much You&apos;ll Save
             </motion.button>
           </motion.div>
 
@@ -188,7 +188,7 @@ const Hero = () => {
                 <div className="flex justify-start">
                   <div className="bg-gray-100 rounded-2xl px-4 py-3 max-w-xs">
                     <p className="text-gray-900 text-sm leading-relaxed">
-                      Hi! I saw your post about scaling your coaching business. I'd love to learn more about your programme. Do you have any availability for a call this week?
+                      Hi! I saw your post about scaling your coaching business. I&apos;d love to learn more about your programme. Do you have any availability for a call this week?
                     </p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ const Hero = () => {
                 <div className="flex justify-end">
                   <div className="bg-blue-500 rounded-2xl px-4 py-3 max-w-xs">
                     <p className="text-white text-sm leading-relaxed">
-                      Absolutely! I have a few slots available. What's your biggest challenge right now?
+                      Absolutely! I have a few slots available. What&apos;s your biggest challenge right now?
                     </p>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ const Hero = () => {
                 <div className="flex justify-start">
                   <div className="bg-gray-100 rounded-2xl px-4 py-3 max-w-xs">
                     <p className="text-gray-900 text-sm leading-relaxed">
-                      I'm struggling with consistent lead flow. I've tried everything but nothing seems to stick. Can we book a 30-min call to discuss?
+                      I&apos;m struggling with consistent lead flow. I&apos;ve tried everything but nothing seems to stick. Can we book a 30-min call to discuss?
                     </p>
                   </div>
                 </div>
