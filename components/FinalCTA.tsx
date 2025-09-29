@@ -85,7 +85,7 @@ const FinalCTA = () => {
                   whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(0, 185, 173, 0.4)' }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    const element = document.querySelector('#book-call');
+                    const element = document.querySelector('#booking');
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="bg-primary hover:bg-primary-600 text-white px-12 py-6 rounded-lg font-bold text-xl transition-all duration-300 flex items-center gap-3 mx-auto group relative overflow-hidden"
