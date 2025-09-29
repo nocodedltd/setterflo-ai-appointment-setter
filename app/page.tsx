@@ -9,6 +9,7 @@ import SavingsCalculator from "@/components/Calculator";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import EarlyAccess from "@/components/EarlyAccess";
+import BookingSection from "@/components/BookingSection";
 import FinalCTA from "@/components/FinalCTA";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -33,11 +34,12 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <EarlyAccess />
+      <BookingSection />
       <FinalCTA />
       <FAQ />
       <Footer />
       
-      {/* Cal.com Modal Embed */}
+      {/* Cal.com Modal Embed (kept for backward compatibility) */}
       <div id="book-call" className="hidden">
         <CalComEmbed />
       </div>
