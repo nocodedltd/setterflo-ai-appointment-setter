@@ -139,7 +139,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
               </h3>
               
               <p className="text-text-secondary mb-6">
-                Check your email for your free trial setup instructions. You'll be booking more calls within 24 hours!
+                Check your email for your free trial setup instructions. You&apos;ll be booking more calls within 24 hours!
               </p>
               
               <Button
@@ -399,7 +399,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
           className="text-center mt-16"
         >
           <p className="text-text-muted mb-4">
-            Still have questions? We're here to help.
+            Still have questions? We&apos;re here to help.
           </p>
           <Button
             variant="outline"

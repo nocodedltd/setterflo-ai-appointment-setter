@@ -15,7 +15,7 @@ function getClientIdentifier(request: NextRequest) {
   if (forwardedFor) {
     return forwardedFor.split(",")[0]?.trim() || "forwarded";
   }
-  return request.headers.get("x-real-ip") || request.ip || "anonymous";
+  return request.headers.get("x-real-ip") || ("" as string) || "anonymous";
 }
 
 export function ensureEnvironment() {

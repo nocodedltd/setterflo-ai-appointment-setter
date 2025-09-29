@@ -1,10 +1,11 @@
+import type { ContactFormInput } from "@/lib/schemas/contact";
 /**
  * Contact Form Types
  * TypeScript interfaces for contact form data and API responses
  */
 
-// Re-export ContactFormInput from schema as ContactFormData for consistency
-export type { ContactFormInput as ContactFormData } from "@/lib/schemas/contact";
+// Re-export ContactFormInput from schema as ContactFormInput for consistency
+export type { ContactFormInput } from "@/lib/schemas/contact";
 
 // API response for successful form submission
 export interface ContactFormSuccessResponse {
@@ -17,7 +18,7 @@ export interface ContactFormSuccessResponse {
 export interface ContactFormErrorResponse {
   success: false;
   error: string;
-  field?: keyof ContactFormData;
+  field?: string;
   timestamp: string;
 }
 
@@ -25,7 +26,7 @@ export interface ContactFormErrorResponse {
 export type ContactFormResponse = ContactFormSuccessResponse | ContactFormErrorResponse;
 
 // Enhanced contact form data with metadata for webhook
-export interface ContactFormSubmission extends ContactFormData {
+export interface ContactFormSubmission extends ContactFormInput {
   timestamp: string;
   source: string;
   metadata: {
@@ -42,7 +43,7 @@ export interface WebhookPayload {
 
 // Form validation state for UI components
 export interface FormFieldError {
-  field: keyof ContactFormData;
+  field: keyof ContactFormInput;
   message: string;
 }
 
