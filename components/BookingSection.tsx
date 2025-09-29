@@ -118,7 +118,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
 
   if (submitted) {
     return (
-      <section id="booking" className={`py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10 ${className}`}>
+      <section id="booking" className={`py-20 bg-background ${className}`}>
         {/* Backup anchor for book-call links */}
         <div id="book-call" className="absolute -mt-20"></div>
         
@@ -128,10 +128,10 @@ const BookingSection = ({ className }: BookingSectionProps) => {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="bg-white rounded-3xl p-8 shadow-soft border border-success-200"
+              className="glass rounded-3xl p-8 shadow-soft border border-primary/20"
             >
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-success-100">
-                <CheckCircle className="h-8 w-8 text-success-600" />
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                <CheckCircle className="h-8 w-8 text-primary" />
               </div>
               
               <h3 className="mb-4 text-2xl font-bold text-text-primary font-heading">
@@ -157,7 +157,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
   }
 
   return (
-    <section id="booking" className={`py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10 ${className}`}>
+    <section id="booking" className={`py-20 bg-background ${className}`}>
       {/* Backup anchor for book-call links */}
       <div id="book-call" className="absolute -mt-20"></div>
       
@@ -191,14 +191,14 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             variants={itemVariants}
             className="text-xl text-text-secondary max-w-3xl mx-auto"
           >
-            See SetterFlo in action with a personalized demo, or jump straight in with our free trial.
+            See SetterFlo in action with a personalised demo, or jump straight in with our free trial.
           </motion.p>
         </motion.div>
 
         {/* Tab Navigation */}
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-lg p-1 shadow-soft border border-border">
+            <div className="glass rounded-lg p-1 shadow-soft border border-border">
               <button
                 onClick={() => setActiveTab('demo')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
@@ -252,7 +252,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-primary" />
-                        Personalized setup recommendations
+                        Personalised setup recommendations
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-primary" />
@@ -261,7 +261,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
                     </ul>
                   </div>
                   
-                  <div className="flex items-center justify-between text-sm text-text-muted bg-white/50 rounded-lg p-4">
+                  <div className="flex items-center justify-between text-sm text-text-muted glass rounded-lg p-4 border border-border">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span>Usually available within 24 hours</span>
@@ -302,7 +302,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
                     </ul>
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-text-muted bg-white/50 rounded-lg p-4">
+                  <div className="flex items-center justify-between text-sm text-text-muted glass rounded-lg p-4 border border-border">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span>Setup in under 10 minutes</span>
@@ -319,7 +319,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             {/* Right Side - Forms */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-2xl shadow-soft border border-border overflow-hidden"
+              className="glass rounded-2xl shadow-soft border border-border overflow-hidden"
             >
               {activeTab === 'demo' ? (
                 <div className="p-6">
@@ -333,59 +333,61 @@ const BookingSection = ({ className }: BookingSectionProps) => {
                   />
                 </div>
               ) : (
-                <form onSubmit={handleTrialSubmit} className="p-6 space-y-4">
+                <div className="p-6">
                   <h4 className="text-lg font-semibold text-text-primary font-heading mb-4">
                     Start Your Free Trial
                   </h4>
                   
-                  <Input
-                    name="name"
-                    type="text"
-                    label="Full Name"
-                    placeholder="Enter your full name"
-                    required
-                  />
-                  
-                  <Input
-                    name="email"
-                    type="email"
-                    label="Email Address"
-                    placeholder="Enter your email address"
-                    required
-                  />
-                  
-                  <Input
-                    name="instagram"
-                    type="text"
-                    label="Instagram Handle"
-                    placeholder="@yourusername (without the @)"
-                    required
-                  />
-                  
-                  <Input
-                    name="business"
-                    type="text"
-                    label="Business/Coaching Niche"
-                    placeholder="e.g., Business Coach, Mindset Coach"
-                    required
-                  />
+                  <form onSubmit={handleTrialSubmit} className="space-y-4">
+                    <Input
+                      name="name"
+                      type="text"
+                      label="Full Name"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                    
+                    <Input
+                      name="email"
+                      type="email"
+                      label="Email Address"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                    
+                    <Input
+                      name="instagram"
+                      type="text"
+                      label="Instagram Handle"
+                      placeholder="@yourusername (without the @)"
+                      required
+                    />
+                    
+                    <Input
+                      name="business"
+                      type="text"
+                      label="Business/Coaching Niche"
+                      placeholder="e.g., Business Coach, Mindset Coach"
+                      required
+                    />
 
-                  <Button
-                    type="submit"
-                    loading={isSubmitting}
-                    loadingText="Setting up your trial..."
-                    className="w-full"
-                    size="lg"
-                  >
-                    <Zap className="w-5 h-5 mr-2" />
-                    Start My Free Trial
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
+                    <Button
+                      type="submit"
+                      loading={isSubmitting}
+                      loadingText="Setting up your trial..."
+                      className="w-full"
+                      size="lg"
+                    >
+                      <Zap className="w-5 h-5 mr-2" />
+                      Start My Free Trial
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
 
-                  <p className="text-xs text-text-muted text-center mt-4">
-                    No credit card required. Cancel anytime during your trial.
-                  </p>
-                </form>
+                    <p className="text-xs text-text-muted text-center mt-4">
+                      No credit card required. Cancel anytime during your trial.
+                    </p>
+                  </form>
+                </div>
               )}
             </motion.div>
           </div>
