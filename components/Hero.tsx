@@ -122,7 +122,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 185, 173, 0.3)' }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('#book-call')}
+              onClick={() => scrollToSection('#booking')}
               className="bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 group relative overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
