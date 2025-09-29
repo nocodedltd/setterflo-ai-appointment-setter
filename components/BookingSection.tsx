@@ -71,7 +71,9 @@ const BookingSection = ({ className }: BookingSectionProps) => {
       if (existingScript) {
         document.body.removeChild(existingScript);
       }
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -117,6 +119,9 @@ const BookingSection = ({ className }: BookingSectionProps) => {
   if (submitted) {
     return (
       <section id="booking" className={`py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10 ${className}`}>
+        {/* Backup anchor for book-call links */}
+        <div id="book-call" className="absolute -mt-20"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
@@ -153,6 +158,9 @@ const BookingSection = ({ className }: BookingSectionProps) => {
 
   return (
     <section id="booking" className={`py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10 ${className}`}>
+      {/* Backup anchor for book-call links */}
+      <div id="book-call" className="absolute -mt-20"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
