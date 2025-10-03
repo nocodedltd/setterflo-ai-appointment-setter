@@ -77,7 +77,7 @@ const FinalCTA = () => {
                 </h2>
                 
                 <p className="text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
-                  Join hundreds of successful coaches who&apos;ve automated their lead generation. 
+                  Join the successful coaches who&apos;ve automated their lead generation with SetterFlo.
                   Get your AI setter running in under 10 minutes and start booking more calls today.
                 </p>
 

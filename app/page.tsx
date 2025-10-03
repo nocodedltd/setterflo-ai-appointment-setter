@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import TrustedMarquee from "@/components/TrustedMarquee";
 import TargetAudience from "@/components/TargetAudience";
 import Benefits from "@/components/Benefits";
 import HowItWorks from "@/components/HowItWorks";
@@ -26,7 +25,6 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <TrustedMarquee />
       <TargetAudience />
       <Benefits />
       <HowItWorks />

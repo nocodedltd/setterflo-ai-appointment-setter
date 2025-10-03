@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Star, Zap, Crown, ArrowRight, Calendar } from 'lucide-react';
+import { Check, Star, Zap, Crown, ArrowRight } from 'lucide-react';
 
 const Pricing = () => {
   const [billing, setBilling] = useState<'monthly' | 'yearly'>('monthly');
@@ -51,7 +51,7 @@ const Pricing = () => {
         'Weekly optimisation calls',
       ],
       limitations: [],
-      cta: 'Start Free Trial',
+      cta: 'Book a Demo',
       popular: true,
     },
     {
@@ -237,6 +237,10 @@ const Pricing = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const element = document.querySelector('#book-call');
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     plan.popular
                       ? 'bg-primary hover:bg-primary-600 text-white'
@@ -249,48 +253,6 @@ const Pricing = () => {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Beta Notice */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-16"
-        >
-          <div className="glass-strong rounded-2xl p-8 max-w-4xl mx-auto border-2 border-primary/20">
-            <h3 className="text-2xl font-bold text-text-primary font-heading mb-4">
-              Beta Pricing Open for 5 Coaches Only
-            </h3>
-            <p className="text-text-secondary text-lg mb-6">
-              Once filled, pricing increases. Don&apos;t wait. Lock in these rates for life.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const element = document.querySelector('#book-call');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2"
-              >
-                <Calendar className="w-5 h-5" />
-                Lock In Beta Pricing
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://instagram.com/setterflo', '_blank')}
-                className="glass hover:glass-strong text-text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2"
-              >
-                DM us on Instagram
-              </motion.button>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

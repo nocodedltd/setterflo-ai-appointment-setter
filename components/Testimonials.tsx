@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import ClientLogos from './ClientLogos';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -96,9 +97,12 @@ const Testimonials = () => {
             What Coaches Are Saying
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Join hundreds of successful coaches who&apos;ve automated their lead generation with SetterFlo.
+            Join the successful coaches who&apos;ve automated their lead generation with SetterFlo.
           </p>
         </motion.div>
+
+        {/* Client Logos */}
+        <ClientLogos />
 
         {/* Testimonial Carousel */}
         <motion.div
