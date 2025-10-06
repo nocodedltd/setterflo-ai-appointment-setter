@@ -25,7 +25,9 @@ const ContactSection = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: `Subject: ${formData.subject}\n\nInstagram: @${formData.username}\n\n${formData.message}`,
+          subject: formData.subject,
+          message: formData.message,
+          username: formData.username,
         }),
       });
       

@@ -1,43 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ContactFormSchema, formatZodError } from "@/lib/schemas/contact";
-import { ensureEnvironment, enforceRateLimit } from "@/lib/middleware/security";
-import { sendWebhook, WebhookError } from "@/lib/services/webhook";
-import {
-  ContactFormInput,
-  ContactFormSuccessResponse,
-  ContactFormErrorResponse,
-  WebhookPayload,
-} from "@/lib/types/contact";
+import { z } from 'zod';
 
-/**
- * POST /api/contact
- * Handle contact form submissions and trigger webhook
- */
+const SimpleContactSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  subject: z.string().optional(),
+  message: z.string().min(1, 'Message is required'),
+  username: z.string().optional(),
+});
+
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const timestamp = new Date().toISOString();
 
   try {
-    const env = ensureEnvironment();
-
-    // Validate Content-Type header
-    const contentType = request.headers.get("Content-Type");
-    if (!contentType?.includes("application/json")) {
-      return NextResponse.json<ContactFormErrorResponse>(
-        {
-          success: false,
-          error: "Content-Type must be application/json",
-          timestamp,
-        },
-        { status: 400 }
-      );
-    }
-
-    // Parse request body
     let requestData: unknown;
     try {
       requestData = await request.json();
     } catch {
-      return NextResponse.json<ContactFormErrorResponse>(
+      return NextResponse.json(
         {
           success: false,
           error: "Invalid JSON in request body",
@@ -47,20 +27,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-    const rateLimitResponse = enforceRateLimit(request);
-    if (rateLimitResponse) {
-      return rateLimitResponse;
-    }
-
-    // Validate form data
-    const validationResult = ContactFormSchema.safeParse(requestData);
+    const validationResult = SimpleContactSchema.safeParse(requestData);
     if (!validationResult.success) {
-      const { field, message } = formatZodError(validationResult.error);
-      return NextResponse.json<ContactFormErrorResponse>(
+      const firstError = validationResult.error.issues[0];
+      return NextResponse.json(
         {
           success: false,
-          error: message,
-          field: field as keyof ContactFormInput | undefined,
+          error: firstError?.message || 'Validation failed',
           timestamp,
         },
         { status: 400 }
@@ -68,49 +41,38 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     const formData = validationResult.data;
-
-    // Extract metadata from request
-    const userAgent = request.headers.get("User-Agent") || undefined;
-    const forwardedFor = request.headers.get("X-Forwarded-For");
-    const remoteAddress = request.headers.get("X-Real-IP");
-    const ipAddress = forwardedFor?.split(",")[0]?.trim() || remoteAddress || undefined;
-
-    // Prepare webhook payload
-    const webhookPayload: WebhookPayload = {
-      type: "contact_form_submission",
-      formName: "contact_sales",
-      formType: "contact",
-      data: {
-        ...formData, // This includes all the form fields
-        timestamp,
-        source: "landing-page",
-        metadata: {
-          userAgent,
-          ipAddress,
-        },
-      },
-    };
-
+    const webhookUrl = 'https://nocoded-n8n-u41031.vm.elestio.app/webhook/fbf64cb4-aa0b-4830-b5d8-c113ed92f1d0';
+    
     try {
-      await sendWebhook(webhookPayload, {
-        url: 'https://nocoded-n8n-u41031.vm.elestio.app/webhook/fbf64cb4-aa0b-4830-b5d8-c113ed92f1d0',
-        secret: env.WEBHOOK_SECRET,
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formName: 'contact_sales',
+          formType: 'contact',
+          ...formData,
+          timestamp,
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Webhook responded with ${response.status}`);
+      }
     } catch (error) {
-      const message = error instanceof WebhookError ? error.message : "Internal server error";
-      console.error("Webhook request failed:", error);
-      return NextResponse.json<ContactFormErrorResponse>(
+      console.error('Webhook request failed:', error);
+      return NextResponse.json(
         {
           success: false,
-          error: message,
+          error: 'Failed to send message. Please try again.',
           timestamp,
         },
         { status: 500 }
       );
     }
 
-    // Return success response
-    return NextResponse.json<ContactFormSuccessResponse>(
+    return NextResponse.json(
       {
         success: true,
         message: "Message sent successfully",
@@ -120,7 +82,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   } catch (error) {
     console.error("Unexpected error in contact API:", error);
-    return NextResponse.json<ContactFormErrorResponse>(
+    return NextResponse.json(
       {
         success: false,
         error: "Internal server error",
@@ -131,7 +93,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 }
 
-// Only allow POST method
 export async function GET() {
   return NextResponse.json(
     { error: "Method not allowed" },
