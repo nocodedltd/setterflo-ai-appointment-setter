@@ -28,7 +28,7 @@ const EarlyAccess = () => {
   };
 
   return (
-    <section id="early-access" className="py-20 bg-background">
+    <section id="early-access" className="py-20 bg-gradient-to-b from-background-secondary to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -74,7 +74,7 @@ const EarlyAccess = () => {
                   </motion.button>
                 </div>
 
-                <div className="mt-8 text-sm text-text-muted">
+                <div className="mt-8 text-sm text-text-secondary">
                   <p>✓ 15-minute call • ✓ See live demo • ✓ No commitment required</p>
                 </div>
               </div>

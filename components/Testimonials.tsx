@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import ClientLogos from './ClientLogos';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,16 +82,13 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Client Logos */}
-        <ClientLogos />
-
         {/* Testimonial Carousel */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-4xl mx-auto mt-12"
         >
           <div className="relative overflow-hidden rounded-2xl">
             <AnimatePresence mode="wait">
