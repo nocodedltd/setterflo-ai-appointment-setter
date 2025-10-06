@@ -74,6 +74,18 @@ const Hero = () => {
             </span>
           </motion.div>
 
+          {/* Logo */}
+          <motion.div
+            variants={itemVariants}
+            className="mb-8 flex justify-center"
+          >
+            <img 
+              src="/setterflo-logo.svg" 
+              alt="SetterFlo" 
+              className="h-16 sm:h-20 lg:h-24 w-auto"
+            />
+          </motion.div>
+
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}

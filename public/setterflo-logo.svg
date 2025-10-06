@@ -1,0 +1,35 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- "setter" text in white -->
+  <text x="20" y="140" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#FFFFFF">setter</text>
+  
+  <!-- "flo" text in cyan with wave -->
+  <defs>
+    <!-- Gradient for the wave -->
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D9D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00B8B8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- "flo" text -->
+  <text x="280" y="140" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="#00D9D9">flo</text>
+  
+  <!-- Waveform on the right side of "flo" -->
+  <g transform="translate(370, 100)">
+    <!-- Wave path -->
+    <path d="M 0 0 Q 10 -15, 20 0 T 40 0 Q 50 15, 60 0 T 80 0" 
+          stroke="url(#waveGradient)" 
+          stroke-width="6" 
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+    
+    <!-- Additional wave line for thickness -->
+    <path d="M 5 5 Q 15 -10, 25 5 T 45 5 Q 55 20, 65 5" 
+          stroke="url(#waveGradient)" 
+          stroke-width="4" 
+          stroke-linecap="round"
+          fill="none"
+          opacity="0.6"/>
+  </g>
+</svg>

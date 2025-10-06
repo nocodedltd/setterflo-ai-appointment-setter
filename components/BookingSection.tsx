@@ -140,7 +140,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             
             <motion.div variants={itemVariants} className="glass rounded-xl p-6 border border-border text-center">
               <CheckCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-text-primary mb-2">Personalized Setup</h4>
+              <h4 className="font-semibold text-text-primary mb-2">Personalised Setup</h4>
               <p className="text-sm text-text-secondary">Tailored recommendations for your niche</p>
             </motion.div>
             
@@ -211,7 +211,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-primary" />
-              <span>100% personalized to your business</span>
+              <span>100% personalised to your business</span>
             </div>
           </div>
         </motion.div>

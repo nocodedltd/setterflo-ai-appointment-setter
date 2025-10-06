@@ -51,9 +51,13 @@ const Navigation = () => {
           >
             <button
               onClick={() => scrollToSection('#hero')}
-              className="text-2xl font-bold text-text-primary font-heading"
+              className="flex items-center"
             >
-              SetterFlo
+              <img 
+                src="/setterflo-logo.svg" 
+                alt="SetterFlo" 
+                className="h-8 w-auto"
+              />
             </button>
           </motion.div>
 
