@@ -13,7 +13,7 @@ const CalComEmbed = () => {
     return () => {
       // Cleanup script on unmount
       const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
-      if (existingScript) {
+      if (existingScript && existingScript.parentNode === document.body) {
         document.body.removeChild(existingScript);
       }
     };

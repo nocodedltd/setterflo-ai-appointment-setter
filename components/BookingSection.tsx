@@ -52,12 +52,14 @@ const BookingSection = ({ className }: BookingSectionProps) => {
     document.body.appendChild(script);
 
     return () => {
-      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
-      if (existingScript && document.body.contains(existingScript)) {
-        document.body.removeChild(existingScript);
-      }
-      if (document.body.contains(script)) {
+      // Clean up the inline script we created
+      if (script.parentNode === document.body) {
         document.body.removeChild(script);
+      }
+      // Clean up Cal.com external script if it exists
+      const externalScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (externalScript && externalScript.parentNode === document.head) {
+        document.head.removeChild(externalScript);
       }
     };
   }, []);
