@@ -200,7 +200,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-text-muted">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-text-secondary">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-primary" />
               <span>No commitment required</span>

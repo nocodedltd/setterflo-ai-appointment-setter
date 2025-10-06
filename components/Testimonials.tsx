@@ -10,49 +10,31 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Mitchell',
-      role: 'Mindset Coach',
-      revenue: '£18k/month',
-      avatar: 'SM',
-      quote: "Before SetterFlo I was paying £2k+/month + 10% commission. Now I pay under £600 and have more calls booked than ever. The AI actually sounds more like me than my human setter did!",
-      rating: 5,
-      savings: '£1,400/month',
-    },
-    {
-      name: 'James Thompson',
-      role: 'Business Coach',
-      revenue: '£25k/month',
-      avatar: 'JT',
-      quote: "I was sceptical about AI setters, but SetterFlo has been a game-changer. It works 24/7, never takes holidays, and books higher quality leads than my previous human setters.",
-      rating: 5,
-      savings: '£2,200/month',
-    },
-    {
-      name: 'Emma Rodriguez',
-      role: 'Life Coach',
+      name: 'Charlie Lefever',
+      role: 'NoCoded',
       revenue: '£15k/month',
-      avatar: 'ER',
+      avatar: 'CL',
       quote: "The ROI is incredible. SetterFlo paid for itself in the first week. I'm booking 40% more calls and spending zero time managing setters. It's like having a perfect employee.",
       rating: 5,
       savings: '£1,800/month',
     },
     {
-      name: 'David Chen',
-      role: 'Executive Coach',
-      revenue: '£30k/month',
-      avatar: 'DC',
-      quote: "I&apos;ve tried every lead generation tool out there. SetterFlo is the only one that actually works. The AI understands my coaching style and books qualified leads consistently.",
+      name: 'Joe Brady',
+      role: 'Who Media',
+      revenue: '£25k/month',
+      avatar: 'JB',
+      quote: "I was sceptical about AI setters, but SetterFlo has been a game-changer. It works 24/7, never takes holidays, and books higher quality leads than my previous human setters.",
       rating: 5,
-      savings: '£2,500/month',
+      savings: '£2,200/month',
     },
     {
-      name: 'Lisa Park',
-      role: 'Career Coach',
-      revenue: '£12k/month',
-      avatar: 'LP',
-      quote: "As a new coach, I couldn&apos;t afford human setters. SetterFlo gave me enterprise-level lead generation at a fraction of the cost. I&apos;m scaling faster than I ever imagined.",
+      name: 'Liam Coyle',
+      role: 'ContentFlo',
+      revenue: '£18k/month',
+      avatar: 'LC',
+      quote: "Before SetterFlo I was paying £2k+/month + 10% commission. Now I pay under £600 and have more calls booked than ever. The AI actually sounds more like me than my human setter did!",
       rating: 5,
-      savings: '£1,200/month',
+      savings: '£1,400/month',
     },
   ];
 
@@ -83,7 +65,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-b from-background to-background-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -120,11 +102,11 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="glass-strong rounded-2xl p-8 lg:p-12"
+                className="bg-gradient-to-br from-[#2A2E47] to-[#232641] rounded-2xl p-8 lg:p-12 border border-border/50"
               >
                 <div className="text-center">
                   {/* Quote Icon */}
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Quote className="w-8 h-8 text-primary" />
                   </div>
 
@@ -142,14 +124,14 @@ const Testimonials = () => {
 
                   {/* Author */}
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#00B8B8] rounded-full flex items-center justify-center text-white font-bold text-xl">
                       {testimonials[currentIndex].avatar}
                     </div>
                     <div className="text-left">
                       <div className="text-lg font-semibold text-text-primary">
                         {testimonials[currentIndex].name}
                       </div>
-                      <div className="text-text-muted">
+                      <div className="text-text-secondary">
                         {testimonials[currentIndex].role}
                       </div>
                       <div className="text-sm text-primary font-medium">
@@ -159,9 +141,9 @@ const Testimonials = () => {
                   </div>
 
                   {/* Savings Badge */}
-                  <div className="mt-6 inline-flex items-center gap-2 bg-success-500/10 border border-success-500/20 rounded-full px-4 py-2">
-                    <div className="w-2 h-2 bg-success-500 rounded-full" />
-                    <span className="text-success-500 font-semibold">
+                  <div className="mt-6 inline-flex items-center gap-2 bg-success-500/20 border border-success-500/30 rounded-full px-6 py-2">
+                    <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse" />
+                    <span className="text-success-500 font-semibold text-sm">
                       Saves {testimonials[currentIndex].savings}
                     </span>
                   </div>
