@@ -27,8 +27,8 @@ const Pricing = () => {
       ],
       limitations: [],
       cta: 'Get Started',
-      ctaLink: '#booking',
-      ctaType: 'scroll',
+      ctaLink: 'https://buy.stripe.com/4gMeV6gaueY65zWa6Cfw408',
+      ctaType: 'stripe',
       popular: false,
     },
     {
@@ -52,9 +52,9 @@ const Pricing = () => {
         'Weekly optimisation calls',
       ],
       limitations: [],
-      cta: 'Book a Demo',
-      ctaLink: '#booking',
-      ctaType: 'scroll',
+      cta: 'Get Started',
+      ctaLink: 'https://buy.stripe.com/bJe7sEcYi9DM0fCa6Cfw409',
+      ctaType: 'stripe',
       popular: true,
     },
     {

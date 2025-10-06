@@ -10,39 +10,39 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How is SetterFlo different from a human setter?",
-      answer: "SetterFlo is available 24/7, never misses a DM, doesn't take holidays, and costs a fraction of human setter commissions. Plus, it's trained on your exact messaging style and automatically books calls directly in DMs—no links, no friction."
+      answer: "Unlike human setters, SetterFlo never takes breaks, never forgets to follow up and never asks for commission. It responds instantly (or with a custom delay), 24/7, in your exact tone of voice. Plus, it's trained on scripts from a pro setter in the business & mindset coaching space mixed with your own so it actually talks like a top performer, not a bot. Coaches typically see 30–40% more calls booked compared to human setters."
     },
     {
-      question: "Will it sound like a robot?",
-      answer: "No. SetterFlo is trained on your voice and includes natural typos, corrections, delays, and conversational fillers. Leads think they're talking to you or your team."
+      question: "Will prospects know it's an AI and not a real person?",
+      answer: "Nope. SetterFlo uses human-like messaging with casual punctuation, fillers, even little typos + corrections (just like a real DM). It builds rapport naturally, references their content and asks open-ended questions. Most coaches tell us their leads can't tell the difference at all, it just feels like chatting with a super responsive team member."
     },
     {
-      question: "How long does setup take?",
-      answer: "48–72 hours. We handle the custom training and deployment so you don't have to lift a finger."
+      question: "How do I know it will fit my offer and niche?",
+      answer: "During onboarding, we collect your offer details, scripts, FAQs and objections. SetterFlo is then trained on your exact language + a proven playbook from high-performing setters. That means every message feels authentic and tailored to your audience whether you sell coaching for business, e-commerce, sales, trading, mindset or hybrid offers."
     },
     {
-      question: "What if I don't use Instagram?",
-      answer: "SetterFlo is optimised for Instagram DMs where most coaching leads happen. If you use other platforms, contact us to discuss custom integrations."
+      question: "What does the setup fee actually cover?",
+      answer: "This isn't just \"plug and play\" AI. Every SetterFlo agent is customised to your offer, your niche and your voice. The setup covers: Collecting your scripts, objections and FAQs, Writing custom prompts that sound like you, Building and connecting the tech stack (IG integration, calendar sync, objection library, follow-ups, analytics), Testing everything on a demo account before going live so you don't lose leads. It's a done-for-you onboarding, not a template."
     },
     {
-      question: "Do I need to change my existing booking process?",
-      answer: "No. SetterFlo syncs with your existing calendar (Cal.com, Calendly, etc.) and books directly inside DMs."
+      question: "Can it handle objections like \"too expensive\" or \"I need to think about it\"?",
+      answer: "Yes. SetterFlo has an entire objection-handling library built in covering price, timing, hesitation and competitor objections. It qualifies leads, handles pushback and smoothly guides the right ones to a booking. And because it never forgets to follow up, many \"slow\" leads convert after a few gentle nudges. As I'm sure you know, the sales are in the follow-ups!"
     },
     {
-      question: "What happens after beta pricing ends?",
-      answer: "Prices will increase by 2.5×. Early adopters lock in beta pricing permanently."
+      question: "Is it safe to give SetterFlo access to my Instagram?",
+      answer: "Absolutely. We integrate through secure, approved API tools. SetterFlo never stores your client's personal data outside of your account. And if you prefer, we can demo the agent first on our test account before going live on yours. We're fully compliant with Instagram's terms of service."
     },
     {
-      question: "Can I cancel anytime?",
-      answer: "Yes. No long-term contracts. Cancel anytime from your dashboard."
+      question: "What if I already have a setter or closer on my team?",
+      answer: "Perfect. SetterFlo can run in Co-Pilot Mode so that means qualifying and warming up leads, then passing the best ones to your human setter or closer. This means your team spends their time only on high-quality prospects, instead of chasing every \"just curious\" DM."
     },
     {
-      question: "What if leads ask questions SetterFlo can't answer?",
-      answer: "SetterFlo handles 95% of common questions. For edge cases, it seamlessly hands off to you with context included."
+      question: "How much money can I actually save with SetterFlo?",
+      answer: "Most coaches pay a human setter £1.5K–£3K base salary + 5–10% commission which easily adds up to £3K–£5K/month. SetterFlo starts at just £397/month flat. With no commission fees and 24/7 availability, the ROI is typically 300-500%. Use our calculator to see your exact savings based on your current setup."
     },
     {
-      question: "How many calls will I get booked per month?",
-      answer: "Most clients see 15–30 qualified calls booked per month, depending on inbound DM volume. SetterFlo converts 30–40% more leads than human setters."
+      question: "What if it doesn't work for me?",
+      answer: "We're confident it will, because it's built from proven scripts and optimised weekly. But if for any reason you're not seeing results, you can cancel anytime. The truth is, for most coaches, SetterFlo pays for itself with just 1 booked high-ticket client."
     }
   ];
 
