@@ -7,6 +7,7 @@ import Benefits from "@/components/Benefits";
 import HowItWorks from "@/components/HowItWorks";
 import SavingsCalculator from "@/components/Calculator";
 import Pricing from "@/components/Pricing";
+import ContactSection from "@/components/ContactSection";
 import Testimonials from "@/components/Testimonials";
 import EarlyAccess from "@/components/EarlyAccess";
 import BookingSection from "@/components/BookingSection";
@@ -32,6 +33,7 @@ export default function Home() {
       <HowItWorks />
       <SavingsCalculator />
       <Pricing />
+      <ContactSection />
       <Testimonials />
       <EarlyAccess />
       <BookingSection />

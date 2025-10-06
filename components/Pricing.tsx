@@ -12,6 +12,7 @@ const Pricing = () => {
       name: 'Starter',
       description: 'Perfect for coaches just starting out',
       monthlyPrice: 397,
+      originalPrice: 997, // Strikethrough price
       yearlyPrice: 317, // 20% off
       icon: Zap,
       color: 'text-blue-400',
@@ -24,17 +25,17 @@ const Pricing = () => {
         'Email support',
         'Basic analytics',
       ],
-      limitations: [
-        'No outbound messaging',
-        'Limited customisation',
-      ],
+      limitations: [],
       cta: 'Get Started',
+      ctaLink: process.env.NEXT_PUBLIC_STRIPE_STARTER_URL || '#',
+      ctaType: 'stripe',
       popular: false,
     },
     {
       name: 'Pro',
       description: 'Most popular for established coaches',
       monthlyPrice: 597,
+      originalPrice: 1497, // Strikethrough price
       yearlyPrice: 478, // 20% off
       icon: Star,
       color: 'text-primary',
@@ -42,7 +43,7 @@ const Pricing = () => {
       borderColor: 'border-primary/50',
       features: [
         '2 Instagram accounts',
-        'Inbound + outbound messaging',
+        'Inbound lead engagement',
         'Advanced AI responses',
         'Priority support',
         'Advanced analytics',
@@ -52,12 +53,15 @@ const Pricing = () => {
       ],
       limitations: [],
       cta: 'Book a Demo',
+      ctaLink: '#booking',
+      ctaType: 'scroll',
       popular: true,
     },
     {
       name: 'Enterprise',
       description: 'For agencies and high-volume coaches',
       monthlyPrice: 0,
+      originalPrice: 0,
       yearlyPrice: 0,
       icon: Crown,
       color: 'text-purple-400',
@@ -75,6 +79,8 @@ const Pricing = () => {
       ],
       limitations: [],
       cta: 'Contact Sales',
+      ctaLink: '#contact',
+      ctaType: 'scroll',
       popular: false,
     },
   ];
@@ -113,11 +119,18 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* Beta Pricing Alert */}
+          <div className="inline-block bg-primary/10 border border-primary/30 rounded-full px-6 py-3 mb-6">
+            <p className="text-primary font-semibold text-lg">
+              ⚡ Prices will increase by 2.5× after Beta
+            </p>
+          </div>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary font-heading mb-6">
             Beta Pricing
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-            Limited-time beta pricing. Once we launch publicly, prices increase by 40%.
+            Lock in beta pricing now and keep it forever. Early adopters save thousands.
           </p>
 
           {/* Billing Toggle */}
@@ -195,14 +208,23 @@ const Pricing = () => {
                         Custom
                       </div>
                     ) : (
-                      <div className="flex items-baseline justify-center gap-2">
-                        <span className="text-4xl font-bold text-text-primary">
-                          £{price}
-                        </span>
-                        <span className="text-text-muted">
-                          /{billing === 'yearly' ? 'month' : 'month'}
-                        </span>
-                      </div>
+                      <>
+                        {/* Strikethrough Original Price */}
+                        {plan.originalPrice > 0 && (
+                          <div className="text-lg text-text-muted line-through mb-1">
+                            £{plan.originalPrice}/month
+                          </div>
+                        )}
+                        {/* Current Beta Price */}
+                        <div className="flex items-baseline justify-center gap-2">
+                          <span className="text-4xl font-bold text-text-primary">
+                            £{price}
+                          </span>
+                          <span className="text-text-muted">
+                            /{billing === 'yearly' ? 'month' : 'month'}
+                          </span>
+                        </div>
+                      </>
                     )}
                     {billing === 'yearly' && plan.monthlyPrice > 0 && (
                       <div className="text-sm text-text-muted mt-1">
@@ -234,25 +256,56 @@ const Pricing = () => {
                   )}
                 </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    const element = document.querySelector('#book-call');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
-                    plan.popular
-                      ? 'bg-primary hover:bg-primary-600 text-white'
-                      : 'glass hover:glass-strong text-text-primary border border-border hover:border-primary/50'
-                  }`}
-                >
-                  {plan.cta}
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                {plan.ctaType === 'stripe' ? (
+                  <motion.a
+                    href={plan.ctaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
+                      plan.popular
+                        ? 'bg-primary hover:bg-primary-600 text-white'
+                        : 'glass hover:glass-strong text-text-primary border border-border hover:border-primary/50'
+                    }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      const element = document.querySelector(plan.ctaLink);
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
+                      plan.popular
+                        ? 'bg-primary hover:bg-primary-600 text-white'
+                        : 'glass hover:glass-strong text-text-primary border border-border hover:border-primary/50'
+                    }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                )}
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Done-for-you Setup Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-text-muted text-sm max-w-3xl mx-auto">
+            *Includes Done-for-you setup: <span className="text-text-primary font-semibold">£1,497 one-time onboarding fee</span> (covers custom training + deployment)
+          </p>
         </motion.div>
       </div>
     </section>
