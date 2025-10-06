@@ -22,7 +22,7 @@ const FAQ = () => {
     },
     {
       question: "What does the setup fee actually cover?",
-      answer: "This isn't just \"plug and play\" AI. Every SetterFlo agent is customised to your offer, your niche and your voice. The setup covers: Collecting your scripts, objections and FAQs, Writing custom prompts that sound like you, Building and connecting the tech stack (IG integration, calendar sync, objection library, follow-ups, analytics), Testing everything on a demo account before going live so you don't lose leads. It's a done-for-you onboarding, not a template."
+      answer: "This isn't just \"plug and play\" AI. Every SetterFlo agent is customised to your offer, your niche and your voice. The setup covers:\n\n• Collecting your scripts, objections and FAQs\n• Writing custom prompts that sound like you\n• Building and connecting the tech stack (IG integration, calendar sync, objection library, follow-ups, analytics)\n• Testing everything on a demo account before going live so you don't lose leads\n\nIt's a done-for-you onboarding, not a template."
     },
     {
       question: "Can it handle objections like \"too expensive\" or \"I need to think about it\"?",
