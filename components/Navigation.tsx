@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Calendar, Calculator } from 'lucide-react';
+import Image from 'next/image';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,11 +54,14 @@ const Navigation = () => {
               onClick={() => scrollToSection('#hero')}
               className="flex items-center"
             >
-              <img 
-                src="/setterflo-logo.svg" 
-                alt="SetterFlo" 
-                className="h-8 w-auto"
-              />
+                        <Image
+            src="/setterflo-logo.png"
+            alt="SetterFlo"
+            width={280}
+            height={64}
+            priority
+            className="h-16 w-auto"
+          />
             </button>
           </motion.div>
 

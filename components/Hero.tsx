@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Calculator, ArrowRight, MessageCircle, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -79,11 +80,14 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-8 flex justify-center"
           >
-            <img 
-              src="/setterflo-logo.svg" 
-              alt="SetterFlo" 
-              className="h-16 sm:h-20 lg:h-24 w-auto"
-            />
+                      <Image
+            src="/setterflo-logo.png"
+            alt="SetterFlo Logo"
+            width={512}
+            height={128}
+            priority
+            className="h-32 sm:h-40 lg:h-48 w-auto"
+          />
           </motion.div>
 
           {/* Main Headline */}
