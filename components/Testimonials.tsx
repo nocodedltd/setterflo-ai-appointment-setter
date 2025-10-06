@@ -64,7 +64,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-background-secondary">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -98,7 +98,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="bg-gradient-to-br from-[#2A2E47] to-[#232641] rounded-2xl p-8 lg:p-12 border border-border/50"
+                className="glass-strong rounded-2xl p-8 lg:p-12 border border-border"
               >
                 <div className="text-center">
                   {/* Quote Icon */}

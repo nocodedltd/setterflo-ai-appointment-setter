@@ -88,7 +88,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
   };
 
   return (
-    <section id="booking" className={`py-32 bg-gradient-to-b from-background to-background-secondary ${className}`}>
+    <section id="booking" className={`py-32 bg-background ${className}`}>
       <div id="book-call" className="absolute -mt-20"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,7 +162,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
           className="max-w-6xl mx-auto"
         >
           <div className="glass-strong rounded-3xl shadow-2xl border-2 border-primary/30 overflow-hidden">
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-8 py-6 border-b border-border">
+            <div className="bg-background px-8 py-6 border-b border-border">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-bold text-text-primary font-heading mb-2">
@@ -185,7 +185,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
               </div>
             </div>
             
-            <div className="p-8 bg-background-secondary/30">
+            <div className="p-8 bg-background">
               <div 
                 style={{width:'100%', height:'700px', overflow:'auto'}} 
                 id="my-cal-inline-setterflo-demo"
