@@ -4,11 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Zap, 
   MessageCircle, 
-  Brain, 
   Calendar, 
-  BarChart3, 
   Globe, 
-  Target, 
   Shield,
   Sparkles,
   TrendingUp
@@ -19,56 +16,35 @@ const Benefits = () => {
     {
       icon: Zap,
       title: 'Instant Lead Engagement',
-      description: 'Responds to DMs within seconds, never missing an opportunity',
+      description: 'Responding within 5 minutes makes you 21× more likely to qualify a lead vs waiting 30 minutes (HBR)',
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-400/10',
     },
     {
       icon: MessageCircle,
       title: 'Human-Like Tone',
-      description: 'Trained on your voice and style, sounds authentically like you',
+      description: 'Trained on your voice; includes typos, corrections, delays, and fillers.',
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/10',
     },
     {
-      icon: Brain,
-      title: 'Trained Scripts',
-      description: 'Uses proven conversion scripts tailored to your coaching niche',
-      color: 'text-purple-400',
-      bgColor: 'bg-purple-400/10',
-    },
-    {
-      icon: Target,
-      title: 'Objection Handling',
-      description: 'Handles common objections and keeps conversations moving forward',
-      color: 'text-red-400',
-      bgColor: 'bg-red-400/10',
-    },
-    {
       icon: Calendar,
       title: 'Natural Booking',
-      description: 'Books calls seamlessly using your Cal.com integration',
+      description: 'Books directly inside DMs, syncs calendar, no link required.',
       color: 'text-green-400',
       bgColor: 'bg-green-400/10',
     },
     {
-      icon: BarChart3,
-      title: 'Daily Follow-ups',
-      description: 'Follows up with leads until they book or opt out',
-      color: 'text-indigo-400',
-      bgColor: 'bg-indigo-400/10',
-    },
-    {
       icon: Globe,
       title: 'Multilingual',
-      description: 'Communicates in multiple languages to reach global audiences',
+      description: 'Covers 50+ languages.',
       color: 'text-cyan-400',
       bgColor: 'bg-cyan-400/10',
     },
     {
       icon: TrendingUp,
       title: 'ROI = 1 Client',
-      description: 'Pays for itself with just one additional client per month',
+      description: 'Pays for itself with one high-ticket client/month.',
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-400/10',
     },
@@ -128,7 +104,7 @@ const Benefits = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary font-heading mb-6">
-            What It Does — <span className="text-primary">Your Setter, Upgraded</span>
+            <span className="text-primary">Your Setter, Upgraded.</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             SetterFlo combines the best of human setters with AI reliability. 

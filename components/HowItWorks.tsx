@@ -7,14 +7,14 @@ const HowItWorks = () => {
   const steps = [
     {
       number: '01',
-      title: 'Onboard in 1 Day',
-      subtitle: '7-min form → customised AI setter',
-      description: 'Complete our quick onboarding form with your coaching style, target audience, and booking preferences. Our AI learns your voice and creates a personalised setter in minutes.',
+      title: 'Onboard in 48-72 Hours',
+      subtitle: 'Custom training → personalised AI setter',
+      description: 'We handle the custom training and deployment so you don\'t have to lift a finger. Our AI learns your voice and creates a personalised setter in 48-72 hours.',
       icon: Settings,
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/10',
       features: [
-        '7-minute setup questionnaire',
+        '48-72 hour setup time',
         'Voice and tone customisation',
         'Target audience definition',
         'Booking calendar integration',
@@ -23,7 +23,7 @@ const HowItWorks = () => {
     {
       number: '02',
       title: 'Deploy on Instagram',
-      subtitle: 'Plugs in, talks like you Day 1',
+      subtitle: 'Setup time: Varies (ask Charlie)',
       description: 'Connect your Instagram account securely. SetterFlo integrates seamlessly and starts engaging with leads using your authentic voice and proven conversion scripts.',
       icon: Instagram,
       color: 'text-pink-400',
@@ -38,7 +38,7 @@ const HowItWorks = () => {
     {
       number: '03',
       title: 'Get Calls Booked on Autopilot',
-      subtitle: 'Booked calls → you close → weekly optimisation',
+      subtitle: '17 booked this week +4 from last',
       description: 'Sit back and watch qualified leads book calls directly into your calendar. Focus on closing while SetterFlo handles the entire lead qualification process.',
       icon: TrendingUp,
       color: 'text-green-400',
