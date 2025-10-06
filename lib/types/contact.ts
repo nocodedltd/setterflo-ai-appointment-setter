@@ -38,6 +38,8 @@ export interface ContactFormSubmission extends ContactFormInput {
 // Webhook payload structure sent to external endpoint
 export interface WebhookPayload {
   type: "contact_form_submission";
+  formName?: string;
+  formType?: string;
   data: ContactFormSubmission;
 }
 

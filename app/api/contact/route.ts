@@ -78,6 +78,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     // Prepare webhook payload
     const webhookPayload: WebhookPayload = {
       type: "contact_form_submission",
+      formName: "contact_sales",
+      formType: "contact",
       data: {
         ...formData, // This includes all the form fields
         timestamp,
@@ -91,7 +93,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     try {
       await sendWebhook(webhookPayload, {
-        url: env.WEBHOOK_URL,
+        url: 'https://nocoded-n8n-u41031.vm.elestio.app/webhook/fbf64cb4-aa0b-4830-b5d8-c113ed92f1d0',
         secret: env.WEBHOOK_SECRET,
       });
     } catch (error) {

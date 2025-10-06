@@ -14,23 +14,21 @@ export async function POST(request: NextRequest) {
     // Validate input
     const validatedData = waitlistSchema.parse(body);
     
-    // TODO: Add to your database or email service
-    // For now, we'll just send to webhook
-    const webhookUrl = process.env.WEBHOOK_URL;
+    // Send to webhook
+    const webhookUrl = 'https://nocoded-n8n-u41031.vm.elestio.app/webhook/fbf64cb4-aa0b-4830-b5d8-c113ed92f1d0';
     
-    if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'waitlist',
-          ...validatedData,
-          timestamp: new Date().toISOString(),
-        }),
-      });
-    }
+    await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        formName: 'waitlist',
+        formType: 'waitlist',
+        ...validatedData,
+        timestamp: new Date().toISOString(),
+      }),
+    });
     
     return NextResponse.json(
       { success: true, message: 'Successfully joined waitlist' },
