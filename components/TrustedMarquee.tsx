@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 const logos = [
   { name: 'ContentFlo', image: '/cf_logo_new.svg' },
-  { name: 'NoCoded', image: '/nocoded-logo.svg' },
-  { name: 'Who Media', image: '/whomedia-logo.svg' },
-  { name: 'Elevare', image: '/elevare-logo.svg' },
+  { name: 'NoCoded', image: '/nocoded-logo.png' },
+  { name: 'Who Media', image: '/whomedia-logo.png' },
+  { name: 'Elevare', image: '/elevare-logo.png' },
 ];
 
 const TrustedMarquee = () => {
