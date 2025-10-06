@@ -27,8 +27,8 @@ const Pricing = () => {
       ],
       limitations: [],
       cta: 'Get Started',
-      ctaLink: process.env.NEXT_PUBLIC_STRIPE_STARTER_URL || '#',
-      ctaType: 'stripe',
+      ctaLink: '#booking',
+      ctaType: 'scroll',
       popular: false,
     },
     {

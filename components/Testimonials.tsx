@@ -10,30 +10,39 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'Charlie Lefever',
-      role: 'NoCoded',
-      revenue: '£15k/month',
+      role: 'NoCoded (AI Automation Agency)',
+      revenue: '',
       avatar: 'CL',
-      quote: "The ROI is incredible. SetterFlo paid for itself in the first week. I'm booking 40% more calls and spending zero time managing setters. It's like having a perfect employee.",
+      quote: "Honestly we've tried a lot of AI stuff, but this one stuck. It's simple, does the job and our inbox feels way more under control.",
       rating: 5,
-      savings: '£1,800/month',
+      savings: '',
     },
     {
       name: 'Joe Brady',
-      role: 'Who Media',
-      revenue: '£25k/month',
+      role: 'WhosMedia (Social Media Marketing Agency)',
+      revenue: '',
       avatar: 'JB',
-      quote: "I was sceptical about AI setters, but SetterFlo has been a game-changer. It works 24/7, never takes holidays, and books higher quality leads than my previous human setters.",
+      quote: "Human setters are hit or miss. SetterFlo really shows up every day. The difference is obvious in how many more conversations actually turn into calls and how it sounds like me.",
       rating: 5,
-      savings: '£2,200/month',
+      savings: '',
     },
     {
       name: 'Liam Coyle',
-      role: 'ContentFlo',
-      revenue: '£18k/month',
+      role: 'ContentFlo (CMS Software Company)',
+      revenue: '',
       avatar: 'LC',
-      quote: "Before SetterFlo I was paying £2k+/month + 10% commission. Now I pay under £600 and have more calls booked than ever. The AI actually sounds more like me than my human setter did!",
+      quote: "We actually used to lose track of leads in the DMs all the time. With SetterFlo running, we don't really worry about that anymore it basically just books calls quietly in the background.",
       rating: 5,
-      savings: '£1,400/month',
+      savings: '',
+    },
+    {
+      name: 'Team',
+      role: 'Elevare (MBA Career Advisory Software)',
+      revenue: '',
+      avatar: 'EL',
+      quote: "Our team used to spend hours replying to messages that led nowhere. Now SetterFlo filters out the noise and just drops the serious people onto our calendar so our no-shows have gone down. Saves us a ton of time.",
+      rating: 5,
+      savings: '',
     },
   ];
 
@@ -127,21 +136,10 @@ const Testimonials = () => {
                       <div className="text-lg font-semibold text-text-primary">
                         {testimonials[currentIndex].name}
                       </div>
-                      <div className="text-text-secondary">
+                      <div className="text-text-secondary text-sm">
                         {testimonials[currentIndex].role}
                       </div>
-                      <div className="text-sm text-primary font-medium">
-                        {testimonials[currentIndex].revenue}
-                      </div>
                     </div>
-                  </div>
-
-                  {/* Savings Badge */}
-                  <div className="mt-6 inline-flex items-center gap-2 bg-success-500/20 border border-success-500/30 rounded-full px-6 py-2">
-                    <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse" />
-                    <span className="text-success-500 font-semibold text-sm">
-                      Saves {testimonials[currentIndex].savings}
-                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -188,15 +186,15 @@ const Testimonials = () => {
         >
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-text-secondary">Engagement, capture 100% of inbound DMs</div>
+            <div className="text-text-secondary">Engagement, Capture 100% of inbound DMs</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">70%</div>
-            <div className="text-text-secondary">Tire-kicker filter rate</div>
+            <div className="text-text-secondary">Of tire-kickers filtered out before they waste your time</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">1 Client</div>
-            <div className="text-text-secondary">One high-ticket client = full ROI</div>
+            <div className="text-3xl font-bold text-primary mb-2">1</div>
+            <div className="text-text-secondary">High-ticket client sale per month = ROI</div>
           </div>
         </motion.div>
       </div>

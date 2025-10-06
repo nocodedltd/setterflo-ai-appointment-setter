@@ -1,36 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const logos = [
-  { name: 'ContentFlo', text: 'ContentFlo' },
-  { name: 'NoCoded', text: 'NoCoded' },
-  { name: 'Who Media', text: 'Who Media' },
-  { name: 'Elevare', text: 'Elevare' },
+  { name: 'ContentFlo', image: '/cf_logo_new.svg' },
+  { name: 'NoCoded', image: '/nocoded-logo.svg' },
+  { name: 'Who Media', image: '/whomedia-logo.svg' },
+  { name: 'Elevare', image: '/elevare-logo.svg' },
 ];
 
 const TrustedMarquee = () => {
   return (
     <section className="py-16 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <p className="text-text-secondary text-lg font-medium">
-            Trusted by coaches scaling beyond $10K/month
-          </p>
-        </motion.div>
-
         {/* Scrolling Marquee */}
         <div className="relative">
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-16"
+              className="flex gap-16 items-center"
               animate={{
                 x: [0, -1000],
               }}
@@ -47,10 +35,19 @@ const TrustedMarquee = () => {
               {[...logos, ...logos, ...logos].map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center glass px-8 py-4 rounded-lg min-w-[200px]"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-4 min-w-[180px]"
                 >
-                  <span className="text-2xl font-bold text-text-primary whitespace-nowrap">
-                    {logo.text}
+                  <div className="w-24 h-24 relative flex items-center justify-center glass rounded-xl p-4">
+                    <Image
+                      src={logo.image}
+                      alt={logo.name}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-lg font-semibold text-text-primary whitespace-nowrap">
+                    {logo.name}
                   </span>
                 </div>
               ))}

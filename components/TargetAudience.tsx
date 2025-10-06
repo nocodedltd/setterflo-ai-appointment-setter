@@ -18,7 +18,7 @@ const TargetAudience = () => {
     {
       icon: TrendingUp,
       title: 'High Commission',
-      description: 'Paying 10-15% commission on every sale adds up quickly',
+      description: 'Paying 7.5%-15% commission on every sale adds up quickly',
     },
     {
       icon: AlertCircle,
@@ -46,7 +46,7 @@ const TargetAudience = () => {
     {
       icon: CheckCircle,
       title: 'Coaching Freedom',
-      description: 'Focus on what you do best - coaching and closing',
+      description: 'Focus on what you do best, not micromanaging a team of setters around the world',
     },
   ];
 
