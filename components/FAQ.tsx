@@ -9,36 +9,40 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How is SetterFlo different from human setters?",
-      answer: "SetterFlo works 24/7, never takes holidays, and costs a fraction of human setters. It responds instantly to DMs, uses your exact voice and tone, and never gets tired or makes mistakes. Plus, you pay a fixed monthly fee instead of commission on every sale."
+      question: "How is SetterFlo different from a human setter?",
+      answer: "SetterFlo is available 24/7, never misses a DM, doesn't take holidays, and costs a fraction of human setter commissions. Plus, it's trained on your exact messaging style and automatically books calls directly in DMs—no links, no friction."
     },
     {
-      question: "Will prospects know they're talking to AI?",
-      answer: "No, SetterFlo is designed to sound completely human. It uses your coaching style, personality, and proven conversion scripts. Prospects will think they're talking directly to you. The AI is trained on successful coaching conversations and adapts to your unique voice."
+      question: "Will it sound like a robot?",
+      answer: "No. SetterFlo is trained on your voice and includes natural typos, corrections, delays, and conversational fillers. Leads think they're talking to you or your team."
     },
     {
-      question: "Is SetterFlo right for my coaching niche?",
-      answer: "SetterFlo works for all coaching niches - business, mindset, life, career, executive, and more. During setup, you'll specify your niche, target audience, and coaching style. The AI learns your specific approach and tailors conversations accordingly."
+      question: "How long does setup take?",
+      answer: "48–72 hours. We handle the custom training and deployment so you don't have to lift a finger."
     },
     {
-      question: "What if prospects have objections or questions?",
-      answer: "SetterFlo is trained to handle common objections like 'I'm not ready', 'It's too expensive', or 'I need to think about it'. It uses proven objection-handling techniques and can escalate complex questions to you via email. The AI gets smarter with each conversation."
+      question: "What if I don't use Instagram?",
+      answer: "SetterFlo is optimised for Instagram DMs where most coaching leads happen. If you use other platforms, contact us to discuss custom integrations."
     },
     {
-      question: "Is my Instagram account safe?",
-      answer: "Absolutely. SetterFlo uses Instagram's official API with read-only access to DMs. We never post content or access your personal data. Your account remains completely secure, and you can revoke access anytime. We're fully compliant with Instagram's terms of service."
+      question: "Do I need to change my existing booking process?",
+      answer: "No. SetterFlo syncs with your existing calendar (Cal.com, Calendly, etc.) and books directly inside DMs."
     },
     {
-      question: "Can I use SetterFlo as a co-pilot with my human setter?",
-      answer: "Yes! Many coaches use SetterFlo to handle initial lead qualification and warm-up conversations, then hand off qualified prospects to their human setter for closing. This hybrid approach maximises efficiency while maintaining the human touch where needed."
+      question: "What happens after beta pricing ends?",
+      answer: "Prices will increase by 2.5×. Early adopters lock in beta pricing permanently."
     },
     {
-      question: "How much will I actually save?",
-      answer: "Most coaches save £1,500-£3,000+ per month compared to human setters. With no commission fees and 24/7 availability, the ROI is typically 300-500%. Use our calculator to see your exact savings based on your current setup."
+      question: "Can I cancel anytime?",
+      answer: "Yes. No long-term contracts. Cancel anytime from your dashboard."
     },
     {
-      question: "Can I cancel if it doesn't work for me?",
-      answer: "Yes, you can cancel anytime with 30 days notice. We're so confident in SetterFlo's performance that we offer a 30-day money-back guarantee. If you're not booking more calls within 30 days, we'll refund your entire investment."
+      question: "What if leads ask questions SetterFlo can't answer?",
+      answer: "SetterFlo handles 95% of common questions. For edge cases, it seamlessly hands off to you with context included."
+    },
+    {
+      question: "How many calls will I get booked per month?",
+      answer: "Most clients see 15–30 qualified calls booked per month, depending on inbound DM volume. SetterFlo converts 30–40% more leads than human setters."
     }
   ];
 

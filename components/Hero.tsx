@@ -7,7 +7,9 @@ import Image from 'next/image';
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
-  const words = ['Business', 'Mindset'];
+  const words = ['Business', 'Mindset', 'Sales', 'Leadership'];
+  const [formData, setFormData] = useState({ name: '', email: '', username: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -116,9 +118,9 @@ const Hero = () => {
           {/* Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-xl sm:text-2xl lg:text-3xl text-text-secondary font-medium mb-8 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl lg:text-3xl text-text-secondary font-medium mb-4 max-w-4xl mx-auto"
           >
-            Never Lose a Lead Again. Your AI Setter Books Calls While You Coach.
+            Never Lose a Lead Again. Your SetterFlo Books Calls While You Coach.
           </motion.p>
 
           {/* Subhead */}
@@ -127,8 +129,78 @@ const Hero = () => {
             className="text-lg sm:text-xl text-text-muted mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Want to stop chasing DMs and relying on flaky human setters? SetterFlo works your Instagram inbox 24/7, 
-            books you more qualified calls and costs less than one client sale.
+            books you more qualified calls and costs less than one high ticket client sale.
           </motion.p>
+
+          {/* Waitlist Form */}
+          <motion.div
+            variants={itemVariants}
+            className="max-w-2xl mx-auto mb-8"
+          >
+            <form 
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setFormStatus('submitting');
+                try {
+                  const response = await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                  });
+                  if (response.ok) {
+                    setFormStatus('success');
+                    setFormData({ name: '', email: '', username: '' });
+                  } else {
+                    setFormStatus('error');
+                  }
+                } catch (error) {
+                  setFormStatus('error');
+                }
+              }}
+              className="glass p-6 rounded-2xl space-y-4"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="px-4 py-3 bg-background-secondary border border-primary/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                  className="px-4 py-3 bg-background-secondary border border-primary/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+                />
+                <input
+                  type="text"
+                  placeholder="@instagram"
+                  value={formData.username}
+                  onChange={(e) => setFormData({...formData, username: e.target.value})}
+                  required
+                  className="px-4 py-3 bg-background-secondary border border-primary/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+              <motion.button
+                type="submit"
+                disabled={formStatus === 'submitting'}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {formStatus === 'submitting' ? 'Joining Waitlist...' : 
+                 formStatus === 'success' ? '✓ Joined Successfully!' : 
+                 'Join the Waitlist Now'}
+              </motion.button>
+              {formStatus === 'error' && (
+                <p className="text-red-400 text-sm text-center">Something went wrong. Please try again.</p>
+              )}
+            </form>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -139,14 +211,13 @@ const Hero = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 185, 173, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('#booking')}
-              className="bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 group relative overflow-hidden"
+              className="glass hover:glass-strong text-text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 group"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Calendar size={20} />
                 Book Your Demo Now
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.button>
 
             <motion.button
