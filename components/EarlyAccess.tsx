@@ -49,13 +49,15 @@ const EarlyAccess = () => {
               
               <div className="relative z-10">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary font-heading mb-6">
-                  Ready to Get Started?{' '}
-                  <span className="text-primary">Book a Demo</span>
+                  Ready to Get Started?
                 </h2>
                 
-                <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-                  See SetterFlo in action. Book a 15-minute call with our team and discover 
-                  how AI can transform your lead generation.
+                <p className="text-xl text-primary mb-4 font-semibold">
+                  Join the waitlist for beta. 5 spots left!
+                </p>
+
+                <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                  We'll spend dedicated 1-on-1 time setting up your AI to make sure it's flawlessly generating qualified appointments for you.
                 </p>
 
                 <div className="flex justify-center">
@@ -63,19 +65,19 @@ const EarlyAccess = () => {
                     whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(0, 185, 173, 0.4)' }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => {
-                      const element = document.querySelector('#book-call');
+                      const element = document.querySelector('#hero');
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="bg-primary hover:bg-primary-600 text-white px-12 py-6 rounded-lg font-semibold text-xl transition-all duration-300 flex items-center gap-3 group"
                   >
                     <Calendar className="w-6 h-6" />
-                    Book a Demo
+                    Join the Waitlist
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" />
                   </motion.button>
                 </div>
 
                 <div className="mt-8 text-sm text-text-secondary">
-                  <p>✓ 15-minute call • ✓ See live demo • ✓ No commitment required</p>
+                  <p>✓ 48-72hrs setup • ✓ Beta pricing locked in • ✓ Done-for-you onboarding</p>
                 </div>
               </div>
             </div>

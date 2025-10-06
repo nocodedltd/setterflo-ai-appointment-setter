@@ -206,7 +206,7 @@ const TargetAudience = () => {
             </h3>
             <p className="text-text-secondary text-lg mb-6">
               Stop losing leads to unreliable human setters. 
-              Get an AI setter that works 24/7 and costs less than one client sale.
+              Get an AI setter that works 24/7 and costs less than one high-ticket client sale.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

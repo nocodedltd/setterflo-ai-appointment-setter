@@ -105,7 +105,7 @@ const BookingSection = ({ className }: BookingSectionProps) => {
           >
             <Calendar className="w-6 h-6 text-primary" />
             <span className="text-base font-semibold text-primary">
-              Schedule Your Demo
+              15-Minute Demo Call
             </span>
           </motion.div>
 
@@ -113,15 +113,22 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary font-heading mb-8"
           >
-            See SetterFlo in{' '}
-            <span className="text-primary">Action</span>
+            Get Early Access to{' '}
+            <span className="text-primary">SetterFlo</span>
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-2xl text-text-secondary max-w-3xl mx-auto mb-12"
+            className="text-2xl text-text-secondary max-w-3xl mx-auto mb-6"
           >
-            Book a 15-minute demo and discover how AI can transform your Instagram lead generation
+            See SetterFlo in action on a test account and get your questions answered.
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-text-muted max-w-2xl mx-auto mb-12"
+          >
+            Live walkthrough, ROI breakdown, personalised setup recs, Q&A.
           </motion.p>
 
           <motion.div
@@ -130,20 +137,20 @@ const BookingSection = ({ className }: BookingSectionProps) => {
           >
             <motion.div variants={itemVariants} className="glass rounded-xl p-6 border border-border text-center">
               <CheckCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-text-primary mb-2">Live Demo</h4>
-              <p className="text-sm text-text-secondary">See SetterFlo working on your Instagram</p>
+              <h4 className="font-semibold text-text-primary mb-2">48-72hrs Onboarding</h4>
+              <p className="text-sm text-text-secondary">Done-for-you setup & training</p>
             </motion.div>
             
             <motion.div variants={itemVariants} className="glass rounded-xl p-6 border border-border text-center">
               <CheckCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-text-primary mb-2">ROI Calculation</h4>
-              <p className="text-sm text-text-secondary">Custom savings analysis for your business</p>
+              <h4 className="font-semibold text-text-primary mb-2">Beta Pricing Locked In</h4>
+              <p className="text-sm text-text-secondary">Save 2.5× vs future pricing</p>
             </motion.div>
             
             <motion.div variants={itemVariants} className="glass rounded-xl p-6 border border-border text-center">
               <CheckCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-text-primary mb-2">Personalised Setup</h4>
-              <p className="text-sm text-text-secondary">Tailored recommendations for your niche</p>
+              <h4 className="font-semibold text-text-primary mb-2">Cancel Anytime</h4>
+              <p className="text-sm text-text-secondary">No long-term contracts required</p>
             </motion.div>
             
             <motion.div variants={itemVariants} className="glass rounded-xl p-6 border border-border text-center">

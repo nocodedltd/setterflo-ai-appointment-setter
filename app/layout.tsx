@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     default: "#1 AI Appointment Setter for Business & Mindset Coaches | SetterFlo",
     template: "%s | SetterFlo",
   },
-  description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one client sale. Stop chasing DMs and relying on flaky human setters.",
+  description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one high-ticket client sale. Stop chasing DMs and relying on flaky human setters.",
   applicationName: "SetterFlo",
   generator: "Next.js",
   keywords,
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "#1 AI Appointment Setter for Business & Mindset Coaches | SetterFlo",
-    description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one client sale.",
+    description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one high-ticket client sale.",
     url: "https://setterflo.com",
     siteName: "SetterFlo",
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "#1 AI Appointment Setter for Business & Mindset Coaches | SetterFlo",
-    description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one client sale.",
+    description: "Never lose a lead again. SetterFlo works your Instagram inbox 24/7, books you more qualified calls and costs less than one high-ticket client sale.",
     site: "@setterflo",
     creator: "@setterflo",
     images: ["/og-image.png"],

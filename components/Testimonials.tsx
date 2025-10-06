@@ -78,7 +78,7 @@ const Testimonials = () => {
             What Coaches Are Saying
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Join the successful coaches who&apos;ve automated their lead generation with SetterFlo.
+            We&apos;re currently onboarding our first wave of beta clients who are tired of missed DMs and human setter headaches.
           </p>
         </motion.div>
 
@@ -187,16 +187,16 @@ const Testimonials = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
         >
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">500+</div>
-            <div className="text-text-secondary">Calls Booked Monthly</div>
+            <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+            <div className="text-text-secondary">Engagement, capture 100% of inbound DMs</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">40%</div>
-            <div className="text-text-secondary">More Calls Than Human Setters</div>
+            <div className="text-3xl font-bold text-primary mb-2">70%</div>
+            <div className="text-text-secondary">Tire-kicker filter rate</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">£2.1M</div>
-            <div className="text-text-secondary">Saved by Our Coaches</div>
+            <div className="text-3xl font-bold text-primary mb-2">1 Client</div>
+            <div className="text-text-secondary">One high-ticket client = full ROI</div>
           </div>
         </motion.div>
       </div>
