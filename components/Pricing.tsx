@@ -218,7 +218,7 @@ const Pricing = () => {
                         {/* Current Beta Price */}
                         <div className="flex items-baseline justify-center gap-2">
                           <span className="text-4xl font-bold text-text-primary">
-                            £{price}
+                            £{price}*
                           </span>
                           <span className="text-text-muted">
                             /{billing === 'yearly' ? 'month' : 'month'}

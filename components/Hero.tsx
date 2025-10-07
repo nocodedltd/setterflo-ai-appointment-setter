@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Calculator, ArrowRight, MessageCircle, TrendingUp } from 'lucide-react';
+import { Calendar, Calculator, ArrowRight, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -97,7 +97,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-text-primary font-heading mb-6 leading-tight"
           >
-            #1 AI Appointment Setter for{' '}
+            <span className="block">#1 AI Appointment Setter for</span>
             <span className="relative inline-block">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -244,15 +244,21 @@ const Hero = () => {
                   <div className="flex items-center gap-3">
                     <div className="relative">
                       <div className="w-8 h-8 bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 rounded-full p-0.5">
-                        <div className="w-full h-full bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center">
-                          <MessageCircle size={16} className="text-white" />
+                        <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
+                          <Image 
+                            src="/setterflo-logo.png" 
+                            alt="SetterFlo" 
+                            width={32} 
+                            height={32}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       </div>
                       <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
                     </div>
                     <div>
                       <div className="text-gray-900 font-semibold text-sm">SetterFlo AI</div>
-                      <div className="text-green-500 text-xs font-medium">Online now</div>
+                      <div className="text-green-500 text-xs font-medium">Active now</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 text-gray-600">
@@ -271,36 +277,61 @@ const Hero = () => {
               
               {/* Chat Messages */}
               <div className="bg-white px-4 py-6 space-y-4 min-h-[400px]">
-                {/* User message */}
-                <div className="flex justify-start">
-                  <div className="bg-gray-100 rounded-2xl px-4 py-3 max-w-xs">
-                    <p className="text-gray-900 text-sm leading-relaxed">
-                      Hi! I saw your post about scaling your coaching business. I&apos;d love to learn more about your programme. Do you have any availability for a call this week?
-                    </p>
-                  </div>
-                </div>
-                
-                {/* AI Response */}
-                <div className="flex justify-end">
-                  <div className="bg-blue-500 rounded-2xl px-4 py-3 max-w-xs">
-                    <p className="text-white text-sm leading-relaxed">
-                      Absolutely! I have a few slots available. What&apos;s your biggest challenge right now?
+                {/* Stat Highlight */}
+                <div className="flex justify-center mb-4">
+                  <div className="bg-green-50 border border-green-200 rounded-full px-4 py-2">
+                    <p className="text-green-700 text-xs font-semibold">
+                      📈 Avg. 30–40% more calls booked than human setters
                     </p>
                   </div>
                 </div>
 
-                {/* User message */}
+                {/* AI First Message */}
+                <div className="flex justify-end">
+                  <div className="bg-blue-500 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[75%]">
+                    <p className="text-white text-sm leading-relaxed">
+                      Hi Alex! Hope you&apos;re having a great day :)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <div className="bg-blue-500 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[75%]">
+                    <p className="text-white text-sm leading-relaxed">
+                      Saw that you liked my recent post about growing your ecommerce store and wanted to reach out!
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <div className="bg-blue-500 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[75%]">
+                    <p className="text-white text-sm leading-relaxed">
+                      What resonated with you the most to make you want to drop a like?
+                    </p>
+                  </div>
+                </div>
+                
+                {/* User Response */}
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 rounded-2xl px-4 py-3 max-w-xs">
+                  <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[75%]">
                     <p className="text-gray-900 text-sm leading-relaxed">
-                      I&apos;m struggling with consistent lead flow. I&apos;ve tried everything but nothing seems to stick. Can we book a 30-min call to discuss?
+                      Yeah man thanks for reaching out! I&apos;m just starting out but struggling to with the conversion rates for my store 😅
+                    </p>
+                  </div>
+                </div>
+
+                {/* AI Response */}
+                <div className="flex justify-end">
+                  <div className="bg-blue-500 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[75%]">
+                    <p className="text-white text-sm leading-relaxed">
+                      ahh got you man 😅 that&apos;s super common when starting out. Curious though… what do you feel like is the biggest thing holding those conversions back right now?
                     </p>
                   </div>
                 </div>
 
                 {/* Typing indicator */}
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 rounded-2xl px-4 py-3">
+                  <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-3">
                     <div className="flex items-center gap-2">
                       <div className="flex gap-1">
                         <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>

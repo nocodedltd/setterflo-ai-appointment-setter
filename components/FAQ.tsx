@@ -4,10 +4,17 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 
+interface FAQItem {
+  question: string;
+  answer: string;
+  bullets?: string[];
+  afterBullets?: string;
+}
+
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
+  const faqs: FAQItem[] = [
     {
       question: "How is SetterFlo different from a human setter?",
       answer: "Unlike human setters, SetterFlo never takes breaks, never forgets to follow up and never asks for commission. It responds instantly (or with a custom delay), 24/7, in your exact tone of voice. Plus, it's trained on scripts from a pro setter in the business & mindset coaching space mixed with your own so it actually talks like a top performer, not a bot. Coaches typically see 30–40% more calls booked compared to human setters."
@@ -22,7 +29,14 @@ const FAQ = () => {
     },
     {
       question: "What does the setup fee actually cover?",
-      answer: "This isn't just \"plug and play\" AI. Every SetterFlo agent is customised to your offer, your niche and your voice. The setup covers:\n\n• Collecting your scripts, objections and FAQs\n• Writing custom prompts that sound like you\n• Building and connecting the tech stack (IG integration, calendar sync, objection library, follow-ups, analytics)\n• Testing everything on a demo account before going live so you don't lose leads\n\nIt's a done-for-you onboarding, not a template."
+      answer: "This isn't just \"plug and play\" AI. Every SetterFlo agent is customised to your offer, your niche and your voice. The setup covers:",
+      bullets: [
+        "Collecting your scripts, objections and FAQs",
+        "Writing custom prompts that sound like you",
+        "Building and connecting the tech stack (IG integration, calendar sync, objection library, follow-ups, analytics)",
+        "Testing everything on a demo account before going live so you don't lose leads"
+      ],
+      afterBullets: "It's a done-for-you onboarding, not a template."
     },
     {
       question: "Can it handle objections like \"too expensive\" or \"I need to think about it\"?",
@@ -142,6 +156,21 @@ const FAQ = () => {
                         <p className="text-text-secondary leading-relaxed">
                           {faq.answer}
                         </p>
+                        {faq.bullets && faq.bullets.length > 0 && (
+                          <ul className="mt-4 space-y-2">
+                            {faq.bullets.map((bullet, bulletIndex) => (
+                              <li key={bulletIndex} className="text-text-secondary leading-relaxed flex items-start gap-2">
+                                <span className="text-primary mt-1">•</span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {faq.afterBullets && (
+                          <p className="text-text-secondary leading-relaxed mt-4">
+                            {faq.afterBullets}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </motion.div>

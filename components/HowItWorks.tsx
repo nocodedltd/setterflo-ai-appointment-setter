@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, Calendar, ArrowRight, CheckCircle, Settings, Instagram, TrendingUp } from 'lucide-react';
+import { Calendar, ArrowRight, CheckCircle, Settings, Instagram, TrendingUp } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -38,7 +38,7 @@ const HowItWorks = () => {
     {
       number: '03',
       title: 'Get Calls Booked on Autopilot',
-      subtitle: '17 booked this week +4 from last week',
+      subtitle: '12 booked this week +3 from last week',
       description: 'Sit back and watch qualified leads book calls directly into your calendar. Focus on closing while SetterFlo handles the entire lead qualification process.',
       icon: TrendingUp,
       color: 'text-green-400',
@@ -182,11 +182,6 @@ const HowItWorks = () => {
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-center gap-2 text-sm text-text-muted">
-                        <Clock className="w-4 h-4" />
-                        <span>~{index === 0 ? '7 minutes' : index === 1 ? '2 minutes' : 'Ongoing'}</span>
-                      </div>
-
                       {index === 0 && (
                         <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
                           <div className="text-sm text-text-primary font-medium mb-2">
@@ -252,11 +247,10 @@ const HowItWorks = () => {
         >
           <div className="glass-strong rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-text-primary font-heading mb-4">
-              Ready to Get Started?
+              Join the waitlist for beta. 5 spots left!
             </h3>
             <p className="text-text-secondary text-lg mb-6">
-              Join hundreds of coaches who&apos;ve automated their lead generation. 
-              Get your AI setter running in under 10 minutes.
+              We&apos;ll spend dedicated 1-on-1 time setting up your AI to make sure it&apos;s flawlessly generating qualified appointments for you.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -268,7 +262,7 @@ const HowItWorks = () => {
               className="bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2 mx-auto"
             >
               <Calendar className="w-5 h-5" />
-              Start Your 7-Minute Setup
+              Ready to Get Started?
             </motion.button>
           </div>
         </motion.div>

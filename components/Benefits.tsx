@@ -8,7 +8,9 @@ import {
   Globe, 
   Shield,
   Sparkles,
-  TrendingUp
+  TrendingUp,
+  FileText,
+  BarChart3
 } from 'lucide-react';
 
 const Benefits = () => {
@@ -16,35 +18,56 @@ const Benefits = () => {
     {
       icon: Zap,
       title: 'Instant Lead Engagement',
-      description: 'Responding within 5 minutes makes you 21× more likely to qualify a lead vs waiting 30 minutes (Harvard Business Review)',
+      description: 'Responds to DMs within seconds, never missing an opportunity',
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-400/10',
     },
     {
       icon: MessageCircle,
       title: 'Human-Like Tone',
-      description: 'The most human sounding setter trained on your voice and style, with fake grammar mistakes and corrections, voice notes, inter-message delays and conversation fillers',
+      description: 'Trained on your voice and style, sounds authentically like you',
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/10',
     },
     {
+      icon: FileText,
+      title: 'Trained Scripts',
+      description: 'Uses proven conversion scripts tailored to your coaching niche',
+      color: 'text-purple-400',
+      bgColor: 'bg-purple-400/10',
+    },
+    {
+      icon: Shield,
+      title: 'Objection Handling',
+      description: 'Handles common objections and keeps conversations moving forward',
+      color: 'text-red-400',
+      bgColor: 'bg-red-400/10',
+    },
+    {
       icon: Calendar,
       title: 'Natural Booking',
-      description: 'No booking links needed. Your AI setter chats back and forth with prospects, checks your real-time calendar and confirms a time that works for both, all inside the DMs',
+      description: 'Books calls seamlessly using your Cal.com integration',
       color: 'text-green-400',
       bgColor: 'bg-green-400/10',
     },
     {
+      icon: BarChart3,
+      title: 'Daily Follow-ups',
+      description: 'Follows up with leads until they book or opt out',
+      color: 'text-indigo-400',
+      bgColor: 'bg-indigo-400/10',
+    },
+    {
       icon: Globe,
       title: 'Multilingual',
-      description: 'Communicates in 50+ languages covering 97% of all speakers worldwide. No need to hire multilingual staff.',
+      description: 'Communicates in multiple languages to reach global audiences',
       color: 'text-cyan-400',
       bgColor: 'bg-cyan-400/10',
     },
     {
       icon: TrendingUp,
       title: 'ROI = 1 Client',
-      description: 'Pays for itself with just one additional high-ticket client per month',
+      description: 'Pays for itself with just one additional client per month',
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-400/10',
     },

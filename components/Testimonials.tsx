@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,15 +14,17 @@ const Testimonials = () => {
       role: 'NoCoded (AI Automation Agency)',
       revenue: '',
       avatar: 'CL',
+      image: '/charlie-lefever.jpeg',
       quote: "Honestly we've tried a lot of AI stuff, but this one stuck. It's simple, does the job and our inbox feels way more under control.",
       rating: 5,
       savings: '',
     },
     {
       name: 'Joe Brady',
-      role: 'WhosMedia (Social Media Marketing Agency)',
+      role: 'Who Media (Social Media Marketing Agency)',
       revenue: '',
       avatar: 'JB',
+      image: '/joe-brady.jpeg',
       quote: "Human setters are hit or miss. SetterFlo really shows up every day. The difference is obvious in how many more conversations actually turn into calls and how it sounds like me.",
       rating: 5,
       savings: '',
@@ -31,6 +34,7 @@ const Testimonials = () => {
       role: 'ContentFlo (CMS Software Company)',
       revenue: '',
       avatar: 'LC',
+      image: '/liam-coyle.jpeg',
       quote: "We actually used to lose track of leads in the DMs all the time. With SetterFlo running, we don't really worry about that anymore it basically just books calls quietly in the background.",
       rating: 5,
       savings: '',
@@ -40,6 +44,7 @@ const Testimonials = () => {
       role: 'Elevare (MBA Career Advisory Software)',
       revenue: '',
       avatar: 'EL',
+      image: '/elevare-team.png',
       quote: "Our team used to spend hours replying to messages that led nowhere. Now SetterFlo filters out the noise and just drops the serious people onto our calendar so our no-shows have gone down. Saves us a ton of time.",
       rating: 5,
       savings: '',
@@ -129,8 +134,20 @@ const Testimonials = () => {
 
                   {/* Author */}
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#00B8B8] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                      {testimonials[currentIndex].avatar}
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30">
+                      {testimonials[currentIndex].image ? (
+                        <Image
+                          src={testimonials[currentIndex].image}
+                          alt={testimonials[currentIndex].name}
+                          width={64}
+                          height={64}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-primary to-[#00B8B8] flex items-center justify-center text-white font-bold text-xl">
+                          {testimonials[currentIndex].avatar}
+                        </div>
+                      )}
                     </div>
                     <div className="text-left">
                       <div className="text-lg font-semibold text-text-primary">
