@@ -246,7 +246,7 @@ const Hero = () => {
                       <div className="w-8 h-8 bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 rounded-full p-0.5">
                         <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
                           <Image 
-                            src="/setterflo-logo.png" 
+                            src="/setterflo-logo.jpeg" 
                             alt="SetterFlo" 
                             width={32} 
                             height={32}
