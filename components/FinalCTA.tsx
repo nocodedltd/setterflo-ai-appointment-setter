@@ -141,16 +141,16 @@ const FinalCTA = () => {
             className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-text-secondary">Calls Booked Monthly</div>
+              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-text-secondary">Engagement, Capture 100% of inbound DMs</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">£2.1M</div>
-              <div className="text-text-secondary">Saved by Coaches</div>
+              <div className="text-3xl font-bold text-primary mb-2">70%</div>
+              <div className="text-text-secondary">Of tire-kickers filtered out before they waste your time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">40%</div>
-              <div className="text-text-secondary">More Calls Booked</div>
+              <div className="text-3xl font-bold text-primary mb-2">1</div>
+              <div className="text-text-secondary">High-ticket client sale per month = ROI</div>
             </div>
           </motion.div>
         </motion.div>
