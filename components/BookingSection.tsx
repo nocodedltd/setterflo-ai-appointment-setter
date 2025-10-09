@@ -39,15 +39,15 @@ const BookingSection = ({ className }: BookingSectionProps) => {
         }; 
       })(window, "https://app.cal.com/embed/embed.js", "init");
       
-      Cal("init", "setterflo-demo", {origin:"https://app.cal.com"});
+      Cal("init", "demo", {origin:"https://app.cal.com"});
       
-      Cal.ns["setterflo-demo"]("inline", {
-        elementOrSelector:"#my-cal-inline-setterflo-demo",
+      Cal.ns.demo("inline", {
+        elementOrSelector:"#my-cal-inline-demo",
         config: {"layout":"month_view"},
-        calLink: "nocoded/setterflo-demo",
+        calLink: "setterflo/demo",
       });
       
-      Cal.ns["setterflo-demo"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      Cal.ns.demo("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#FFFFFF"},"dark":{"cal-brand":"#1D1F42"}},"hideEventTypeDetails":false,"layout":"month_view"});
     `;
     document.body.appendChild(script);
 
@@ -194,8 +194,8 @@ const BookingSection = ({ className }: BookingSectionProps) => {
             
             <div className="p-8 bg-background">
               <div 
-                style={{width:'100%', height:'700px', overflow:'auto'}} 
-                id="my-cal-inline-setterflo-demo"
+                style={{width:'100%', height:'700px', overflow:'scroll'}} 
+                id="my-cal-inline-demo"
                 className="rounded-xl"
               />
             </div>
